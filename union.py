@@ -1,8 +1,5 @@
 import numpy as np
-#NEURONA TIPO SIGMOID
-#anadir lla funcion de activacion 
 #creamos la clase pereceptron
-inputs,weights=[],[]
 class Perceptron():
   def __init__(self,inputs,weights):
     self.inputs=np.array(inputs)
@@ -20,7 +17,7 @@ class Perceptron():
       valor=False
     print(valor)
     return valor
-
+inputs,weights=[],[]
 
 preguntas=[
   "¿cual es la velocidad?.. ",
@@ -39,18 +36,3 @@ treshold=int(input("y nuestro umbral/limite sera: "))
 
 p=Perceptron(inputs,weights)
 print(p.decide(treshold))
-
-class SigmoidNeuron():
-  def __init__(self,inputs,weights):
-    self.inputs=np.array(inputs)
-    self.weights=np.array(weights)
-
-  def decide(self,bias):
-    z=(self.weights @ self.inputs)-bias # tener en cuenta la formula
-    return 1./(1.+np.exp(-z))
-
-bias=int(input(" el nuevo bias sera: "))
-s=SigmoidNeuron(inputs,weights)
-print(s.decide(bias))
-    
-    
